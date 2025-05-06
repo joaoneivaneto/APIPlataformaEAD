@@ -1,11 +1,10 @@
 const ModelAluno = require('../models/aluno');
-const ModelCurso = require("../models/curso");
 
 module.exports = {
   async List(req,res){
     try{
       const alunos = await ModelAluno.findAll();
-      if(alunos.length == 0){
+      if(!alunos.length){
         return res.status(404).json({message:"Nenhum aluno encontrado"});
       }
       return res.json(alunos);
