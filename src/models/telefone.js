@@ -2,9 +2,9 @@ const sequelize = require("sequelize");
 const database = require("../db");
 const shema = ""
 
-class Materias  extends sequelize.Model{}
+class Telefone  extends sequelize.Model{}
 
-Materias.init({
+Telefone.init({
     ID:
       {
         type:sequelize.UUID,
@@ -12,23 +12,18 @@ Materias.init({
         allowNull:false,
         primaryKey:true
       },
-    Nome:
+    Numero:
       {
-        type:sequelize.STRING(40),
-        allowNull:false
-      },
-    Duracao:
-      {
-        type:sequelize.STRING(8),
+        type:sequelize.STRING(20),
         allowNull:false
       }
   },
   {
     sequelize:database,
-    modelName:"Materias",
+    modelName:"Telefones",
     schema:shema
   }
 )
 
-module.exports = Materias;
+module.exports = Telefone;
 

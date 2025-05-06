@@ -13,13 +13,13 @@ module.exports ={
   },
   async Create(req,res){
     try{
-      const cursos = await ModelCurso.create({
+      const curso = await ModelCurso.create({
         ID:req.body.ID,
         Nome:req.body.Nome,
         Duracao:req.body.Duracao,
         Preco:req.body.Preco,
       });
-      return res.json(cursos);
+      return res.json(curso);
     }catch(err){
       console.log("Erro  na create"+err);
     }

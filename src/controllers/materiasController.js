@@ -1,11 +1,11 @@
-const ModelMaterias = require('../models/materias');
+const ModelMateria = require('../models/materia');
 
 module.exports = {
   async List(req,res){
     try{
-      const materias = await ModelMaterias.findAll();
+      const materias = await ModelMateria.findAll();
       if(!materias.length){
-        return res.status(404).json({message:"Nenhuma materia encontrado"});
+        return res.status(404).json({message:"Nenhuma matéria encontrado"});
       }
       return res.json(materias);
     }catch(err){
@@ -14,7 +14,7 @@ module.exports = {
   },
   async Create(req,res){
     try{
-      const materia = await ModelMaterias.create({
+      const materia = await ModelMateria.create({
         ID:req.body.ID,
         Nome:req.body.Nome,
         Duracao:req.body.Duracao,
@@ -26,7 +26,7 @@ module.exports = {
   },
   async Update(req,res){
     try{
-      const materia = await ModelMaterias.findByPk(req.body.ID);
+      const materia = await ModelMateria.findByPk(req.body.ID);
       if(materia){
         materia.ID = req.body.ID;
         materia.Nome = req.body.Nome;
@@ -34,7 +34,7 @@ module.exports = {
         await materia.save();
         return res.json(materia);
       }else {
-        return res.status(404).json({message:"Nenhuma materia encontrado"});
+        return res.status(404).json({message:"Nenhuma matéria encontrado"});
       }
     }catch(err){
       console.log("Erro  na create"+err);
@@ -42,9 +42,9 @@ module.exports = {
   },
   async GetOne(req,res){
     try{
-      const materia  = await ModelMaterias.findByPk(req.body.ID);
+      const materia  = await ModelMateria.findByPk(req.body.ID);
       if(!materia){
-        return res.status(404).json({message:"Nenhuma materia encontrado"});
+        return res.status(404).json({message:"Nenhuma matéria encontrado"});
       }
       return res.json(materia);
     }catch(err){
@@ -53,9 +53,9 @@ module.exports = {
   },
   async Delete(req,res){
     try{
-      const materia  = await ModelMaterias.findByPk(req.body.ID);
+      const materia  = await ModelMateria.findByPk(req.body.ID);
       if(!materia){
-        return res.status(404).json({message:"Nenhuma materia encontrado"});
+        return res.status(404).json({message:"Nenhuma matéria encontrado"});
       }
       await materia.destroy();
       return res.json(materia);

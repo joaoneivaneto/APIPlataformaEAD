@@ -14,7 +14,7 @@ module.exports = {
   },
   async Create(req,res){
     try{
-      const alunos = await ModelAluno.create({
+      const aluno = await ModelAluno.create({
         ID:req.body.ID,
         Email:req.body.Email,
         Nome:req.body.Nome,
@@ -25,7 +25,7 @@ module.exports = {
         Senha:req.body.Senha,
         AnoInicio:req.body.AnoInicio,
       })
-      return res.json(alunos);
+      return res.json(aluno);
     }catch(err){
       console.log("Erro  na create"+err);
     }
