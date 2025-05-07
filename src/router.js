@@ -4,6 +4,8 @@ const controllerProduto = require('./controllers/cursoController');
 const controllerAluno = require('./controllers/alunoController');
 const controllerMaterias = require('./controllers/materiasController');
 const controllerTelefone = require('./controllers/telefoneController');
+const controllerTurma = require('./controllers/turmaController');
+const controllerAlunoCursoTurma = require('./controllers/alunoCursoTurmaController');
 
 
 const router = express.Router();
@@ -35,5 +37,19 @@ router.post('/telefone/Create',controllerTelefone.Create);
 router.patch('/telefone/Update',controllerTelefone.Update);
 router.get('/telefone/GetOne',controllerTelefone.GetOne);
 router.delete('/telefone/Delete',controllerTelefone.Delete);
+
+// Turma
+router.get('/turmas/List',controllerTurma.List);
+router.post('/turma/Create',controllerTurma.Create);
+router.patch('/turma/Update',controllerTurma.Update);
+router.get('/turma/GetOne',controllerTurma.GetOne);
+router.delete('/turma/Delete',controllerTurma.Delete);
+
+//AlunoCursoTurma
+router.get('/alunoCursoTurmas/List',controllerAlunoCursoTurma.List);
+router.post('/alunoCursoTurma/Create',controllerAlunoCursoTurma.Create);
+router.patch('/alunoCursoTurma/Update',controllerAlunoCursoTurma.Update);
+router.get('/alunoCursoTurma/GetOne',controllerAlunoCursoTurma.GetOne);
+router.delete('/alunoCursoTurma/Delete',controllerAlunoCursoTurma.Delete);
 
 module.exports = router;
