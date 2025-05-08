@@ -6,6 +6,7 @@ const controllerMaterias = require('./controllers/materiasController');
 const controllerTelefone = require('./controllers/telefoneController');
 const controllerTurma = require('./controllers/turmaController');
 const controllerAlunoCursoTurma = require('./controllers/alunoCursoTurmaController');
+const controllerCartao = require('./controllers/cartaoController');
 
 
 const router = express.Router();
@@ -51,5 +52,12 @@ router.post('/alunoCursoTurma/Create',controllerAlunoCursoTurma.Create);
 router.patch('/alunoCursoTurma/Update',controllerAlunoCursoTurma.Update);
 router.get('/alunoCursoTurma/GetOne',controllerAlunoCursoTurma.GetOne);
 router.delete('/alunoCursoTurma/Delete',controllerAlunoCursoTurma.Delete);
+
+//Cartao
+router.get('/cartoes/List',controllerCartao.List);
+router.post('/cartao/Create',controllerCartao.Create);
+router.patch('/cartao/Update',controllerCartao.Update);
+router.get('/cartao/GetOne',controllerCartao.GetOne);
+router.delete('/cartao/Delete',controllerCartao.Delete);
 
 module.exports = router;
