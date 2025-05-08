@@ -7,6 +7,7 @@ const controllerTelefone = require('./controllers/telefoneController');
 const controllerTurma = require('./controllers/turmaController');
 const controllerAlunoCursoTurma = require('./controllers/alunoCursoTurmaController');
 const controllerCartao = require('./controllers/cartaoController');
+const ControllerEndereco = require('./controllers/enderecoController');
 
 
 const router = express.Router();
@@ -59,5 +60,12 @@ router.post('/cartao/Create',controllerCartao.Create);
 router.patch('/cartao/Update',controllerCartao.Update);
 router.get('/cartao/GetOne',controllerCartao.GetOne);
 router.delete('/cartao/Delete',controllerCartao.Delete);
+
+//Endereco
+router.get('/enderecos/List',ControllerEndereco.List);
+router.post('/endereco/Create',ControllerEndereco.Create);
+router.patch('/endereco/Update',ControllerEndereco.Update);
+router.get('/endereco/GetOne',ControllerEndereco.GetOne);
+router.delete('/endereco/Delete',ControllerEndereco.Delete);
 
 module.exports = router;
