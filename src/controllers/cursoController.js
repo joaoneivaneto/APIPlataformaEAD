@@ -1,6 +1,8 @@
 const ModelCurso = require('../models/curso');
 module.exports ={
   async List(req,res){
+
+
     try{
       const cursos = await ModelCurso.findAll();
       if(cursos.length == 0){

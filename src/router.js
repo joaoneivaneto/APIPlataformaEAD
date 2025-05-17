@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const controllerProduto = require('./controllers/cursoController');
 const controllerAluno = require('./controllers/alunoController');
@@ -14,6 +15,7 @@ const controllerAlunoTelefone = require('./controllers/telefoneAlunoController')
 
 
 const router = express.Router();
+
 
 //Alunos
 router.get('/aluno/List',controllerAluno.List);
